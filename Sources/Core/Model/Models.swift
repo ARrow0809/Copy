@@ -9,6 +9,14 @@ public enum StepID: String, CaseIterable, Codable, Hashable {
     case S05_copy_run
     case S06_post_verify
     case S07_finalize
+    // 消去用ステップ
+    case E01_confirm
+    case E02_delete_run
+}
+
+public enum AppMode: String, Codable {
+    case transfer
+    case erase
 }
 
 public enum StepRunStatus: String, Codable {

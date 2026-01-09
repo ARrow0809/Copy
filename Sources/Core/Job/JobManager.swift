@@ -39,6 +39,30 @@ public actor JobManager {
         await run(from: nil) // 常にS01から開始
     }
 
+    public func startErase(target: URL) async {
+        guard control == .idle || control == .paused || control == .stopped else { return }
+        self.config.source = target
+        self.config.jobID = UUID()
+        
+        control = .running
+        await resetUIForRun()
+        
+        let steps: [StepID] = [.E01_confirm, .E02_delete_run]
+        for step in steps {
+            if control != .running { break }
+            await mark(step, .running)
+            do {
+                try await runStep(step)
+                await mark(step, .ok)
+            } catch {
+                await mark(step, .error)
+                control = .stopped
+                break
+            }
+        }
+        if control == .running { control = .idle }
+    }
+
     public func pause() {
         control = .paused
     }
@@ -143,6 +167,11 @@ public actor JobManager {
             try await postVerify()
         case .S07_finalize:
             try finalize()
+        case .E01_confirm:
+            // 削除前の最終確認（ここではパスの存在チェックのみ）
+            try validateErasePath()
+        case .E02_delete_run:
+            try await deleteRun()
         }
     }
 
@@ -220,6 +249,10 @@ public actor JobManager {
                 if let speed = progress.speedBps { self.state.speedBps = speed }
                 if let file = progress.currentFile {
                     self.state.currentFile = file
+                    
+                    // ノイズ（進捗行の断片など）を除去
+                    if self.isRsyncNoise(file) { return }
+
                     // コピーログにエントリを追加（ファイル名が変わった場合）
                     let entry = CopyLogEntry(
                         fileName: (file as NSString).lastPathComponent,
@@ -246,5 +279,38 @@ public actor JobManager {
 
     private func finalize() throws {
         // 完了処理
+    }
+
+    // MARK: - Erase steps
+    private func validateErasePath() throws {
+        let fm = FileManager.default
+        guard fm.fileExists(atPath: config.source.path) else {
+            throw NSError(domain: "Job", code: 10, userInfo: [NSLocalizedDescriptionKey: "削除対象が見つかりません"])
+        }
+    }
+
+    private func deleteRun() async throws {
+        let path = config.source.path
+        let process = Process()
+        process.executableURL = URL(fileURLWithPath: "/bin/rm")
+        process.arguments = ["-rf", path]
+        
+        try process.run()
+        process.waitUntilExit()
+        
+        if process.terminationStatus != 0 {
+            throw NSError(domain: "Job", code: 11, userInfo: [NSLocalizedDescriptionKey: "削除に失敗しました (code: \(process.terminationStatus))"])
+        }
+    }
+
+    // Helper to check if string is rsync noise
+    private nonisolated func isRsyncNoise(_ s: String) -> Bool {
+        // " 1.23GB  89%  10.25MB/s" のような行、または "s 0:00:00" のような断片を弾く
+        if s.contains("%") && s.contains("/") { return true }
+        if s.contains("to-chk=") { return true }
+        if s.range(of: "^[0-9, ]+( [0-9]+%)?", options: .regularExpression) != nil { return true }
+        if s.hasSuffix("s") && s.contains(":") { return true } // "0:00:01s"
+        if s == "s" || s.isEmpty { return true }
+        return false
     }
 }

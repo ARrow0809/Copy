@@ -11,6 +11,7 @@ public struct ContentView: View {
     @State private var selectedTab: String = "転送"
     @State private var sourcePath: String = ""
     @State private var destPath: String = ""
+    @State private var erasePath: String = ""
     @State private var showAdvanced: Bool = false
     @State private var showLog: Bool = false
     
@@ -31,8 +32,10 @@ public struct ContentView: View {
             // --- サイドバー ---
             VStack(alignment: .leading, spacing: 20) {
                 SidebarItem(icon: "bolt.fill", title: "転送", isSelected: selectedTab == "転送", theme: theme) {
-                    print("Button clicked: Sidebar 転送")
                     selectedTab = "転送"
+                }
+                SidebarItem(icon: "trash.fill", title: "消去", isSelected: selectedTab == "消去", theme: theme) {
+                    selectedTab = "消去"
                 }
                 Spacer()
             }
@@ -45,115 +48,242 @@ public struct ContentView: View {
                 theme.mainBackground
                     .ignoresSafeArea()
                 
-                VStack(alignment: .leading, spacing: 30) {
-                    // ヘッダー
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("今すぐ高速・安全コピー")
-                            .font(.system(size: 32, weight: .bold))
-                            .foregroundColor(theme.primaryText)
-                        Text("rsync による信頼性の高い差分コピーと検証を提供します。")
-                            .font(.system(size: 16))
-                            .foregroundColor(theme.secondaryText)
-                    }
-                    .padding(.top, 40)
-                    
-                    // パス選択カード
-                    VStack(spacing: 24) {
-                        HStack(spacing: 20) {
-                            PathInputView(label: "コピー元ディレクトリ", path: $sourcePath, icon: "folder", theme: theme)
-                            Image(systemName: "arrow.right")
-                                .foregroundColor(theme.secondaryText)
-                                .font(.system(size: 20, weight: .light))
-                            PathInputView(label: "コピー先ディレクトリ", path: $destPath, icon: "folder", theme: theme)
-                        }
-                    }
-                    .padding(32)
-                    .background(theme.cardBackground)
-                    .cornerRadius(20)
-                    .shadow(color: Color.black.opacity(0.03), radius: 15, x: 0, y: 10)
-                    
-
-                    // 下部コントロール
-                    HStack {
-                        Button(action: {
-                            print("Button clicked: 転送開始")
-                            let src = URL(fileURLWithPath: sourcePath)
-                            let dst = URL(fileURLWithPath: destPath)
-                            Task {
-                                if let manager = manager {
-                                    await manager.start(source: src, destination: dst)
-                                } else {
-                                    print("JobManager is nil: start ignored")
-                                }
-                            }
-                        }) {
-                            HStack {
-                                Image(systemName: "play.fill")
-                                Text("転送開始")
-                            }
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 40)
-                            .padding(.vertical, 16)
-                            .background(Color(hex: "2B6BFF"))
-                            .cornerRadius(12)
-                            .contentShape(Rectangle())
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                        .disabled(isStartDisabled)
-
-                        // キャンセルボタン（実行中のみ表示）
-                        if isRunning {
-                            Button(action: {
-                                print("Button clicked: キャンセル")
-                                Task { await manager?.stop() }
-                            }) {
-                                HStack {
-                                    Image(systemName: "xmark.circle.fill")
-                                    Text("キャンセル")
-                                }
-                                .font(.system(size: 16, weight: .semibold))
-                                .foregroundColor(.white)
-                                .padding(.horizontal, 24)
-                                .padding(.vertical, 12)
-                                .background(Color(hex: "FF453A"))
-                                .cornerRadius(10)
-                                .contentShape(Rectangle())
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                        }
-                        
-                        Spacer()
-                        
-                        Button(action: {
-                            showLog.toggle()
-                        }) {
-                            HStack(spacing: 8) {
-                                Image(systemName: showLog ? "chart.bar.fill" : "doc.text.fill")
-                                Text(showLog ? "進捗表示に戻る" : "コピーログ表示")
-                            }
-                            .foregroundColor(theme.secondaryText)
-                            .contentShape(Rectangle())
-                        }
-                        .buttonStyle(PlainButtonStyle())
-                    }
-                    
-                    // 進捗状況 または ログ表示
-                    if showLog {
-                        CopyLogView(log: jobState.copyLog, theme: theme)
-                            .frame(maxHeight: 250)
-                    } else if manager?.state.stepStatuses.values.contains(where: { $0 != .waiting }) == true || isRunning {
-                        ProgressSection(jobState: jobState, theme: theme)
-                    }
-                    
-                    Spacer()
-                    
-                    // 高度な設定は削除（要件により非表示）
+                if selectedTab == "転送" {
+                    TransferView(sourcePath: $sourcePath, destPath: $destPath, jobState: jobState, manager: manager, showLog: $showLog, theme: theme)
+                } else {
+                    EraseView(erasePath: $erasePath, jobState: jobState, manager: manager, theme: theme)
                 }
-                .padding(.horizontal, 40)
             }
+            .padding(.horizontal, 40)
         }
-        .frame(minWidth: 1000, minHeight: 700)
+    }
+}
+
+// --- 転送画面 ---
+struct TransferView: View {
+    @Binding var sourcePath: String
+    @Binding var destPath: String
+    @ObservedObject var jobState: JobState
+    let manager: JobManager?
+    @Binding var showLog: Bool
+    let theme: Theme
+
+    private var isRunning: Bool { jobState.stepStatuses.values.contains(.running) }
+    private var isStartDisabled: Bool {
+        isRunning || sourcePath.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty || destPath.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 30) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("今すぐ高速・安全コピー")
+                    .font(.system(size: 32, weight: .bold))
+                    .foregroundColor(theme.primaryText)
+                Text("rsync による信頼性の高い差分コピーと検証を提供します。")
+                    .font(.system(size: 16))
+                    .foregroundColor(theme.secondaryText)
+            }
+            .padding(.top, 40)
+            
+            VStack(spacing: 24) {
+                HStack(spacing: 20) {
+                    PathInputView(label: "コピー元ディレクトリ", path: $sourcePath, icon: "folder", theme: theme)
+                    Image(systemName: "arrow.right")
+                        .foregroundColor(theme.secondaryText)
+                        .font(.system(size: 20, weight: .light))
+                    PathInputView(label: "コピー先ディレクトリ", path: $destPath, icon: "folder", theme: theme)
+                }
+            }
+            .padding(32)
+            .background(theme.cardBackground)
+            .cornerRadius(20)
+            .shadow(color: Color.black.opacity(0.03), radius: 15, x: 0, y: 10)
+
+            HStack {
+                Button(action: {
+                    let src = URL(fileURLWithPath: sourcePath)
+                    let dst = URL(fileURLWithPath: destPath)
+                    Task { await manager?.start(source: src, destination: dst) }
+                }) {
+                    HStack {
+                        Image(systemName: "play.fill")
+                        Text("転送開始")
+                    }
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 40)
+                    .padding(.vertical, 16)
+                    .background(Color(hex: "2B6BFF"))
+                    .cornerRadius(12)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(PlainButtonStyle())
+                .disabled(isStartDisabled)
+
+                if isRunning {
+                    Button(action: { Task { await manager?.stop() } }) {
+                        HStack {
+                            Image(systemName: "xmark.circle.fill")
+                            Text("キャンセル")
+                        }
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 12)
+                        .background(Color(hex: "FF453A"))
+                        .cornerRadius(10)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+                
+                Spacer()
+                
+                Button(action: { showLog.toggle() }) {
+                    HStack(spacing: 8) {
+                        Image(systemName: showLog ? "chart.bar.fill" : "doc.text.fill")
+                        Text(showLog ? "進捗表示に戻る" : "コピーログ表示")
+                    }
+                    .foregroundColor(theme.secondaryText)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(PlainButtonStyle())
+            }
+            
+            if showLog {
+                CopyLogView(log: jobState.copyLog, theme: theme)
+                    .frame(maxHeight: 250)
+            } else if jobState.stepStatuses.values.contains(where: { $0 != .waiting }) {
+                ProgressSection(jobState: jobState, theme: theme)
+            }
+            
+            Spacer()
+        }
+    }
+}
+
+// --- 消去画面 ---
+struct EraseView: View {
+    @Binding var erasePath: String
+    @ObservedObject var jobState: JobState
+    let manager: JobManager?
+    let theme: Theme
+
+    private var isRunning: Bool { jobState.stepStatuses.values.contains(.running) }
+    private var isEraseDisabled: Bool {
+        isRunning || erasePath.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 30) {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("高速・安全消去")
+                    .font(.system(size: 32, weight: .bold))
+                    .foregroundColor(theme.primaryText)
+                Text("巨大なファイルやディレクトリを高速に、かつ安全に消去します。")
+                    .font(.system(size: 16))
+                    .foregroundColor(theme.secondaryText)
+            }
+            .padding(.top, 40)
+            
+            VStack(spacing: 24) {
+                PathInputView(label: "消去対象 (ファイル/ディレクトリ)", path: $erasePath, icon: "trash", theme: theme, allowsFiles: true)
+            }
+            .padding(32)
+            .background(theme.cardBackground)
+            .cornerRadius(20)
+            .shadow(color: Color.black.opacity(0.03), radius: 15, x: 0, y: 10)
+
+            HStack {
+                Button(action: {
+                    let target = URL(fileURLWithPath: erasePath)
+                    Task { await manager?.startErase(target: target) }
+                }) {
+                    HStack {
+                        Image(systemName: "trash.fill")
+                        Text("消去実行")
+                    }
+                    .font(.system(size: 18, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 40)
+                    .padding(.vertical, 16)
+                    .background(Color(hex: "FF453A"))
+                    .cornerRadius(12)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(PlainButtonStyle())
+                .disabled(isEraseDisabled)
+
+                if isRunning {
+                    Button(action: { Task { await manager?.stop() } }) {
+                        HStack {
+                            Image(systemName: "xmark.circle.fill")
+                            Text("キャンセル")
+                        }
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 12)
+                        .background(Color(hex: "48484A"))
+                        .cornerRadius(10)
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(PlainButtonStyle())
+                }
+                
+                Spacer()
+            }
+            
+            if jobState.stepStatuses[.E01_confirm] != .waiting {
+                EraseProgressSection(jobState: jobState, theme: theme)
+            }
+            
+            Spacer()
+        }
+    }
+}
+
+// 消去用進捗表示
+struct EraseProgressSection: View {
+    @ObservedObject var jobState: JobState
+    let theme: Theme
+    @State private var isBlinking = false
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 16) {
+            Text("消去の進捗")
+                .font(.headline)
+                .foregroundColor(theme.primaryText)
+            
+            HStack(spacing: 20) {
+                ForEach([StepID.E01_confirm, .E02_delete_run], id: \.self) { step in
+                    let status = jobState.stepStatuses[step] ?? .waiting
+                    HStack {
+                        Circle()
+                            .fill(statusColor(for: status))
+                            .frame(width: 12, height: 12)
+                            .opacity(status == .running ? (isBlinking ? 0.3 : 1.0) : 1.0)
+                            .animation(status == .running ? .easeInOut(duration: 0.5).repeatForever(autoreverses: true) : .default, value: isBlinking)
+                        Text(step == .E01_confirm ? "確認" : "消去実行")
+                            .font(.system(size: 14))
+                            .foregroundColor(theme.primaryText)
+                    }
+                }
+            }
+            .onAppear { isBlinking = true }
+        }
+        .padding(24)
+        .background(theme.progressBackground)
+        .cornerRadius(16)
+    }
+
+    func statusColor(for status: StepRunStatus) -> Color {
+        switch status {
+        case .waiting: return .gray.opacity(0.3)
+        case .running: return Color(hex: "FF453A")
+        case .ok: return .green
+        case .error: return .red
+        }
     }
 }
 
@@ -195,6 +325,7 @@ struct PathInputView: View {
     @Binding var path: String
     let icon: String
     let theme: Theme
+    var allowsFiles: Bool = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -211,8 +342,7 @@ struct PathInputView: View {
                     .foregroundColor(theme.primaryText)
                 
                 Button("参照...") {
-                    print("Button clicked: 参照...")
-                    selectFolder()
+                    selectPath()
                 }
                 .font(.system(size: 13, weight: .medium))
                 .padding(.horizontal, 12)
@@ -235,10 +365,10 @@ struct PathInputView: View {
         }
     }
     
-    private func selectFolder() {
+    private func selectPath() {
         let panel = NSOpenPanel()
         panel.title = label
-        panel.canChooseFiles = false
+        panel.canChooseFiles = allowsFiles
         panel.canChooseDirectories = true
         panel.allowsMultipleSelection = false
         panel.canCreateDirectories = true
