@@ -122,6 +122,7 @@ public actor JobManager {
             state.speedBps = 0
             state.currentFile = nil
             state.errorMessage = nil
+            state.copyLog = []
         }
     }
 
@@ -162,15 +163,34 @@ public actor JobManager {
     }
 
     private func checkSpace() throws {
-        // 簡易実装: コピー先のドライブ情報を取得
+        // ソースフォルダのサイズを取得
+        let sourceSize = folderSize(at: config.source)
+        
+        // コピー先の空き容量を確認
         let attrs = try FileManager.default.attributesOfFileSystem(forPath: config.dest.deletingLastPathComponent().path)
         let free = (attrs[.systemFreeSize] as? NSNumber)?.int64Value ?? 0
         
+        if sourceSize > free {
+            throw NSError(domain: "Job", code: 4, userInfo: [NSLocalizedDescriptionKey: "空き容量が不足しています"])
+        }
+        
         // 進捗初期化
         Task { @MainActor in
-            state.totalBytes = free // 仮
+            state.totalBytes = sourceSize > 0 ? sourceSize : nil
             state.bytesDone = 0
         }
+    }
+    
+    private func folderSize(at url: URL) -> Int64 {
+        let fm = FileManager.default
+        guard let enumerator = fm.enumerator(at: url, includingPropertiesForKeys: [.fileSizeKey], options: [.skipsHiddenFiles]) else { return 0 }
+        var total: Int64 = 0
+        for case let fileURL as URL in enumerator {
+            if let size = try? fileURL.resourceValues(forKeys: [.fileSizeKey]).fileSize {
+                total += Int64(size)
+            }
+        }
+        return total
     }
 
     private func prepareDest() throws {
@@ -190,11 +210,31 @@ public actor JobManager {
     }
 
     private func rsyncRun() async throws {
+        let sourcePath = config.source.path
         try await rsyncWrapper.rsync(source: config.source, dest: config.dest, dryRun: false) { progress in
             Task { @MainActor in
-                self.state.bytesDone = progress.bytesDone
+                // 負の値を無視し、常に最大値を追跡
+                if progress.bytesDone > 0 && progress.bytesDone > self.state.bytesDone {
+                    self.state.bytesDone = progress.bytesDone
+                }
                 if let speed = progress.speedBps { self.state.speedBps = speed }
-                if let file = progress.currentFile { self.state.currentFile = file }
+                if let file = progress.currentFile {
+                    self.state.currentFile = file
+                    // コピーログにエントリを追加（ファイル名が変わった場合）
+                    let entry = CopyLogEntry(
+                        fileName: (file as NSString).lastPathComponent,
+                        fileSize: progress.bytesDone,
+                        sourcePath: sourcePath + "/" + file
+                    )
+                    // 直近のエントリと異なる場合のみ追加
+                    if self.state.copyLog.last?.fileName != entry.fileName {
+                        self.state.copyLog.append(entry)
+                        // 最大100件に制限
+                        if self.state.copyLog.count > 100 {
+                            self.state.copyLog.removeFirst()
+                        }
+                    }
+                }
             }
         }
     }

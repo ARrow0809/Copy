@@ -58,6 +58,21 @@ public struct LogLine: Codable, Hashable {
     }
 }
 
+public struct CopyLogEntry: Identifiable, Hashable {
+    public let id = UUID()
+    public let timestamp: Date
+    public let fileName: String
+    public let fileSize: Int64
+    public let sourcePath: String
+    
+    public init(timestamp: Date = Date(), fileName: String, fileSize: Int64, sourcePath: String) {
+        self.timestamp = timestamp
+        self.fileName = fileName
+        self.fileSize = fileSize
+        self.sourcePath = sourcePath
+    }
+}
+
 @MainActor
 public final class JobState: ObservableObject {
     @Published public var stepStatuses: [StepID: StepRunStatus] = {
@@ -71,6 +86,7 @@ public final class JobState: ObservableObject {
     @Published public var totalBytes: Int64?
     @Published public var speedBps: Int64 = 0
     @Published public var errorMessage: String?
+    @Published public var copyLog: [CopyLogEntry] = []
 
     public nonisolated init() {}
 }
