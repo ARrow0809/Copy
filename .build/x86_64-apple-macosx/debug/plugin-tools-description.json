@@ -1,0 +1,745 @@
+{
+  "builtTestProducts" : [
+
+  ],
+  "copyCommands" : {
+
+  },
+  "explicitTargetDependencyImportCheckingMode" : {
+    "none" : {
+
+    }
+  },
+  "generatedSourceTargetSet" : [
+
+  ],
+  "pluginDescriptions" : [
+
+  ],
+  "swiftCommands" : {
+    "C.Core-x86_64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/sources",
+      "importPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Job/JobManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Logging/JSONLLogger.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Model/Models.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Rsync/RsyncWrapper.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/sources"
+        }
+      ],
+      "isLibrary" : true,
+      "moduleName" : "Core",
+      "moduleOutputPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules/Core.swiftmodule",
+      "objects" : [
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/JobManager.swift.o",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/JSONLLogger.swift.o",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/Models.swift.o",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/RsyncWrapper.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j6",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-parse-as-library",
+        "-emit-objc-header",
+        "-emit-objc-header-path",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/include/Core-Swift.h",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g"
+      ],
+      "outputFileMapPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/JobManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/JSONLLogger.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/RsyncWrapper.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules/Core.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Job/JobManager.swift",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Logging/JSONLLogger.swift",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Model/Models.swift",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Rsync/RsyncWrapper.swift"
+      ],
+      "tempsPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.LyraCopyCLI-x86_64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/sources",
+      "importPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/CLI/main.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules/Core.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "LyraCopyCLI",
+      "moduleOutputPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules/LyraCopyCLI.swiftmodule",
+      "objects" : [
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j6",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "LyraCopyCLI_main",
+        "-parse-as-library",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g"
+      ],
+      "outputFileMapPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules/LyraCopyCLI.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/CLI/main.swift"
+      ],
+      "tempsPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build",
+      "wholeModuleOptimization" : false
+    },
+    "C.LyraCopyUI-x86_64-apple-macosx15.0-debug.module" : {
+      "executable" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "fileList" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/sources",
+      "importPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules",
+      "inputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/UI/App.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/UI/ContentView.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules/Core.swiftmodule"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/sources"
+        }
+      ],
+      "isLibrary" : false,
+      "moduleName" : "LyraCopyUI",
+      "moduleOutputPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules/LyraCopyUI.swiftmodule",
+      "objects" : [
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/App.swift.o",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/ContentView.swift.o"
+      ],
+      "otherArguments" : [
+        "-target",
+        "x86_64-apple-macosx13.0",
+        "-incremental",
+        "-enable-batch-mode",
+        "-serialize-diagnostics",
+        "-index-store-path",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/index/store",
+        "-Onone",
+        "-enable-testing",
+        "-j6",
+        "-DSWIFT_PACKAGE",
+        "-DDEBUG",
+        "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+        "-module-cache-path",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/ModuleCache",
+        "-parseable-output",
+        "-Xfrontend",
+        "-entry-point-function-name",
+        "-Xfrontend",
+        "LyraCopyUI_main",
+        "-color-diagnostics",
+        "-swift-version",
+        "5",
+        "-plugin-path",
+        "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+        "-sdk",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-F",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-I",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-L",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+        "-g",
+        "-Xcc",
+        "-isysroot",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+        "-Xcc",
+        "-F",
+        "-Xcc",
+        "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+        "-Xcc",
+        "-fPIC",
+        "-Xcc",
+        "-g"
+      ],
+      "outputFileMapPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/output-file-map.json",
+      "outputs" : [
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/App.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/ContentView.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules/LyraCopyUI.swiftmodule"
+        }
+      ],
+      "prepareForIndexing" : false,
+      "sources" : [
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/UI/App.swift",
+        "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/UI/ContentView.swift"
+      ],
+      "tempsPath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build",
+      "wholeModuleOptimization" : false
+    }
+  },
+  "swiftFrontendCommands" : {
+
+  },
+  "swiftTargetScanArgs" : {
+    "Core" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "Core",
+      "-c",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Job/JobManager.swift",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Logging/JSONLLogger.swift",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Model/Models.swift",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Rsync/RsyncWrapper.swift",
+      "-I",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules",
+      "-target",
+      "x86_64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j6",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-parse-as-library",
+      "-emit-objc-header",
+      "-emit-objc-header-path",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/include/Core-Swift.h",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "LyraCopyCLI" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "LyraCopyCLI",
+      "-c",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/CLI/main.swift",
+      "-I",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules",
+      "-target",
+      "x86_64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j6",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "LyraCopyCLI_main",
+      "-parse-as-library",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ],
+    "LyraCopyUI" : [
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc",
+      "-module-name",
+      "LyraCopyUI",
+      "-c",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/UI/App.swift",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/UI/ContentView.swift",
+      "-I",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Modules",
+      "-target",
+      "x86_64-apple-macosx13.0",
+      "-incremental",
+      "-enable-batch-mode",
+      "-serialize-diagnostics",
+      "-index-store-path",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/index/store",
+      "-Onone",
+      "-enable-testing",
+      "-j6",
+      "-DSWIFT_PACKAGE",
+      "-DDEBUG",
+      "-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE",
+      "-module-cache-path",
+      "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/ModuleCache",
+      "-parseable-output",
+      "-Xfrontend",
+      "-entry-point-function-name",
+      "-Xfrontend",
+      "LyraCopyUI_main",
+      "-color-diagnostics",
+      "-swift-version",
+      "5",
+      "-plugin-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing",
+      "-sdk",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-F",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-I",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-L",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib",
+      "-g",
+      "-Xcc",
+      "-isysroot",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.1.sdk",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks",
+      "-Xcc",
+      "-F",
+      "-Xcc",
+      "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/PrivateFrameworks",
+      "-Xcc",
+      "-fPIC",
+      "-Xcc",
+      "-g",
+      "-driver-use-frontend-path",
+      "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+    ]
+  },
+  "targetDependencyMap" : {
+    "Core" : [
+
+    ],
+    "LyraCopyCLI" : [
+      "Core"
+    ],
+    "LyraCopyUI" : [
+      "Core"
+    ]
+  },
+  "testDiscoveryCommands" : {
+
+  },
+  "testEntryPointCommands" : {
+
+  },
+  "traitConfiguration" : {
+    "default" : {
+
+    }
+  },
+  "writeCommands" : {
+    "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Job/JobManager.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Logging/JSONLLogger.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Model/Models.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/Core/Rsync/RsyncWrapper.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/sources"
+    },
+    "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI-entitlement.plist"
+    },
+    "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/CLI/main.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/sources"
+    },
+    "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/JSONLLogger.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/JobManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/RsyncWrapper.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.product/Objects.LinkFileList"
+    },
+    "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI-entitlement.plist" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<entitlement-plist>"
+        },
+        {
+          "kind" : "virtual",
+          "name" : "<com.apple.security.get-task-allow>"
+        }
+      ],
+      "outputFilePath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI-entitlement.plist"
+    },
+    "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/sources" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<sources-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/UI/App.swift"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/UI/ContentView.swift"
+        }
+      ],
+      "outputFilePath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/sources"
+    },
+    "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.product/Objects.LinkFileList" : {
+      "alwaysOutOfDate" : false,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<link-file-list>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/JSONLLogger.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/JobManager.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/Models.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/Core.build/RsyncWrapper.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/App.swift.o"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.build/ContentView.swift.o"
+        }
+      ],
+      "outputFilePath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyUI.product/Objects.LinkFileList"
+    },
+    "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt" : {
+      "alwaysOutOfDate" : true,
+      "inputs" : [
+        {
+          "kind" : "virtual",
+          "name" : "<swift-get-version>"
+        },
+        {
+          "kind" : "file",
+          "name" : "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"
+        }
+      ],
+      "outputFilePath" : "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+    }
+  }
+}

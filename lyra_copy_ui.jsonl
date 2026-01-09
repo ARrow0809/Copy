@@ -1,0 +1,14 @@
+{"step_id":"S01_validate_paths","ts":"2026-01-09T07:59:08.155Z","event":"start","job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8"}
+{"status":"ok","exit_code":0,"ts":"2026-01-09T07:59:08.159Z","step_id":"S01_validate_paths","event":"end","job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8"}
+{"ts":"2026-01-09T07:59:08.160Z","event":"start","step_id":"S02_check_space","job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8"}
+{"job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","event":"end","exit_code":0,"status":"ok","ts":"2026-01-09T07:59:08.161Z","step_id":"S02_check_space"}
+{"event":"start","ts":"2026-01-09T07:59:08.162Z","job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","step_id":"S03_prepare_dest"}
+{"status":"ok","event":"end","ts":"2026-01-09T07:59:08.163Z","job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","exit_code":0,"step_id":"S03_prepare_dest"}
+{"event":"start","ts":"2026-01-09T07:59:08.163Z","job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","step_id":"S04_plan_dryrun"}
+{"status":"ok","exit_code":0,"job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","event":"end","ts":"2026-01-09T07:59:08.177Z","step_id":"S04_plan_dryrun"}
+{"job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","event":"start","ts":"2026-01-09T07:59:08.180Z","step_id":"S05_copy_run"}
+{"job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","status":"ok","event":"end","exit_code":0,"ts":"2026-01-09T07:59:08.190Z","step_id":"S05_copy_run"}
+{"event":"start","ts":"2026-01-09T07:59:08.192Z","job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","step_id":"S06_post_verify"}
+{"job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","status":"ok","event":"end","step_id":"S06_post_verify","exit_code":0,"ts":"2026-01-09T07:59:08.197Z"}
+{"job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","event":"start","ts":"2026-01-09T07:59:08.199Z","step_id":"S07_finalize"}
+{"exit_code":0,"event":"end","ts":"2026-01-09T07:59:08.200Z","job_id":"5609DD2A-D47F-4229-8EA1-6D0B3FA63BC8","step_id":"S07_finalize","status":"ok"}

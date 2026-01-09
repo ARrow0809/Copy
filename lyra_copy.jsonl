@@ -1,0 +1,20 @@
+{"job_id":"42A06C5B-2269-4479-82EC-B94236EEA714","event":"start","step_id":"S01_validate_paths","ts":"2026-01-09T07:50:43.890Z"}
+{"ts":"2026-01-09T07:50:43.893Z","event":"end","job_id":"42A06C5B-2269-4479-82EC-B94236EEA714","step_id":"S01_validate_paths","exit_code":1,"message":"Error Domain=Job Code=1 \"Source not found\" UserInfo={NSLocalizedDescription=Source not found}","status":"error"}
+{"job_id":"EA16EBC1-5937-435C-A314-F19108F18BA6","event":"start","ts":"2026-01-09T07:50:58.830Z","step_id":"S01_validate_paths"}
+{"message":"Error Domain=Job Code=1 \"Source not found\" UserInfo={NSLocalizedDescription=Source not found}","ts":"2026-01-09T07:50:58.833Z","exit_code":1,"step_id":"S01_validate_paths","job_id":"EA16EBC1-5937-435C-A314-F19108F18BA6","event":"end","status":"error"}
+{"ts":"2026-01-09T07:51:26.666Z","event":"start","job_id":"F3A315B8-B80C-4A95-9BCE-81EF00890070","step_id":"S01_validate_paths"}
+{"job_id":"F3A315B8-B80C-4A95-9BCE-81EF00890070","ts":"2026-01-09T07:51:26.668Z","event":"end","status":"error","exit_code":1,"step_id":"S01_validate_paths","message":"Error Domain=Job Code=1 \"Source not found\" UserInfo={NSLocalizedDescription=Source not found}"}
+{"step_id":"S01_validate_paths","event":"start","job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA","ts":"2026-01-09T07:52:17.344Z"}
+{"step_id":"S01_validate_paths","status":"ok","exit_code":0,"event":"end","job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA","ts":"2026-01-09T07:52:17.348Z"}
+{"ts":"2026-01-09T07:52:17.348Z","job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA","step_id":"S02_check_space","event":"start"}
+{"event":"end","ts":"2026-01-09T07:52:17.349Z","step_id":"S02_check_space","status":"ok","exit_code":0,"job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA"}
+{"job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA","ts":"2026-01-09T07:52:17.350Z","event":"start","step_id":"S03_prepare_dest"}
+{"ts":"2026-01-09T07:52:17.350Z","job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA","event":"end","step_id":"S03_prepare_dest","exit_code":0,"status":"ok"}
+{"ts":"2026-01-09T07:52:17.351Z","event":"start","job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA","step_id":"S04_plan_dryrun"}
+{"status":"ok","exit_code":0,"job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA","ts":"2026-01-09T07:52:17.363Z","step_id":"S04_plan_dryrun","event":"end"}
+{"ts":"2026-01-09T07:52:17.363Z","step_id":"S05_copy_run","event":"start","job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA"}
+{"status":"ok","step_id":"S05_copy_run","event":"end","ts":"2026-01-09T07:52:17.375Z","exit_code":0,"job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA"}
+{"step_id":"S06_post_verify","event":"start","ts":"2026-01-09T07:52:17.376Z","job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA"}
+{"ts":"2026-01-09T07:52:17.383Z","step_id":"S06_post_verify","event":"end","status":"ok","exit_code":0,"job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA"}
+{"job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA","ts":"2026-01-09T07:52:17.383Z","event":"start","step_id":"S07_finalize"}
+{"step_id":"S07_finalize","event":"end","status":"ok","ts":"2026-01-09T07:52:17.384Z","exit_code":0,"job_id":"4E1551AD-5005-45D0-99CC-0F3EFF1AD5CA"}

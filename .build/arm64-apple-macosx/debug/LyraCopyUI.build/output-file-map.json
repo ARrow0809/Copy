@@ -1,0 +1,19 @@
+{
+  "": {
+    "swift-dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/master.swiftdeps"
+  },
+  "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/UI/App.swift": {
+    "dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/App.d",
+    "object": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/App.swift.o",
+    "swiftmodule": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/App~partial.swiftmodule",
+    "swift-dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/App.swiftdeps",
+    "diagnostics": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/App.dia"
+  },
+  "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/UI/ContentView.swift": {
+    "dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/ContentView.d",
+    "object": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/ContentView.swift.o",
+    "swiftmodule": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/ContentView.swiftdeps",
+    "diagnostics": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/arm64-apple-macosx/debug/LyraCopyUI.build/ContentView.dia"
+  }
+}
