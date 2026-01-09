@@ -1,12 +1,12 @@
 {
   "": {
-    "swift-dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/master.swiftdeps"
+    "swift-dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/Copy/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/master.swiftdeps"
   },
-  "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/Sources/CLI/main.swift": {
-    "dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.d",
-    "object": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.swift.o",
-    "swiftmodule": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main~partial.swiftmodule",
-    "swift-dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.swiftdeps",
-    "diagnostics": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/LyraCopyMVP/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.dia"
+  "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/Copy/Sources/CLI/main.swift": {
+    "dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/Copy/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.d",
+    "object": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/Copy/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.swift.o",
+    "swiftmodule": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/Copy/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main~partial.swiftmodule",
+    "swift-dependencies": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/Copy/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.swiftdeps",
+    "diagnostics": "/Users/arrowssd/Library/CloudStorage/GoogleDrive-3dcaw24@gmail.com/マイドライブ/_dev/Copy/.build/x86_64-apple-macosx/debug/LyraCopyCLI.build/main.dia"
   }
 }

@@ -16,11 +16,13 @@ public final class RsyncWrapper {
         let process = Process()
         self.process = process
         
-        // /usr/bin/env 経由で PATH 上の rsync を解決（Homebrew 版対応）
-        process.executableURL = URL(fileURLWithPath: "/usr/bin/env")
+        // Homebrew版rsyncを直接指定（.appからの起動時にPATHが通らないため）
+        let rsyncPath = FileManager.default.fileExists(atPath: "/usr/local/bin/rsync") 
+            ? "/usr/local/bin/rsync" 
+            : "/usr/bin/rsync"
+        process.executableURL = URL(fileURLWithPath: rsyncPath)
         
         var args = [
-            "rsync",
             "-a",
             "--human-readable",
             "--protect-args"
